@@ -118,7 +118,7 @@ function App() {
             Generate Barcodes
           </button>
           <button
-           style={{marginLeft:"1%"}}
+           style={{marginLeft:"1%" ,marginTop:"1%"}}
             onClick={handleCopyBarcodes}
             className="bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition-all duration-300 font-semibold shadow-md"
           >
