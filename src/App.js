@@ -75,7 +75,7 @@ function App() {
     navigator.clipboard.writeText(barcodeText).then(() => {
       toast.success('Barcodes copied to clipboard!');
     }).catch(() => {
-      toast.error('Failed to copy barcodes.');
+      toast.warning("Failed to copy Barcodes")
     });
   };
   return (
