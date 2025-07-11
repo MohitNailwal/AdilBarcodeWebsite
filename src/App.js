@@ -2,6 +2,8 @@ import logo from './adil logo.jpg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import JsBarcode from 'jsbarcode';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Store used barcodes to prevent duplicates
 const usedBarcodes = new Set();
@@ -71,14 +73,22 @@ function App() {
   const handleCopyBarcodes = () => {
     const barcodeText = barcodes.join('\n');
     navigator.clipboard.writeText(barcodeText).then(() => {
-      alert('Barcodes copied to clipboard!');
+      toast.success('Barcodes copied to clipboard!');
     }).catch(() => {
-      alert('Failed to copy barcodes.');
+      toast.error('Failed to copy barcodes.');
     });
   };
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex flex-col items-center p-6">
-       
+       <ToastContainer 
+        position="top-right"
+        autoClose={1000}// Auto-close after 3 seconds
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+      />
+
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8">
        
         <h1 className="text-3xl font-extrabold text-center text-blue-700 mb-6">
